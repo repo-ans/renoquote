@@ -87,7 +87,7 @@ export function Nav({ variant = "home" }: { variant?: Variant }) {
                 : "text-navy-800 hover:text-accent-600"
             }`}
           >
-            Get a Quote
+            For Homeowners
           </Link>
           <Link
             href="/contractors"
@@ -146,7 +146,7 @@ export function Nav({ variant = "home" }: { variant?: Variant }) {
                   className="block py-3 text-4xl font-bold text-white"
                   onClick={() => setOpen(false)}
                 >
-                  Get a Quote
+                   For Homeowners
                 </Link>
               </motion.div>
               <motion.div variants={menuItem}>
