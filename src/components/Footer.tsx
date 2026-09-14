@@ -29,13 +29,13 @@ export function Footer() {
       <Container className="py-14">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <span className="inline-flex items-center rounded-lg bg-white px-2.5 py-1.5 shadow-sm">
+            <span className="inline-flex items-center rounded-lg bg-white px-3 py-2 shadow-sm">
               <Image
                 src="/renoquotes-logo-full.png"
                 alt="RenoQuotes"
                 width={1017}
                 height={612}
-                className="h-9 w-auto object-contain"
+                className="h-14 w-auto object-contain"
               />
             </span>
             <div className="mt-4 flex gap-3">
@@ -96,8 +96,16 @@ export function Footer() {
           </div>
         </div>
       </Container>
-      <Container className="border-t border-white/10 py-5 text-xs text-slate-300">
-        © {new Date().getFullYear()} RenoQuotes. All rights reserved.
+      <Container className="flex flex-col gap-2 border-t border-white/10 py-5 text-xs text-slate-300 sm:flex-row sm:items-center sm:justify-between">
+        <span>© {new Date().getFullYear()} RenoQuotes. All rights reserved.</span>
+        <a
+          href="https://aniyanetworks.net/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-slate-300 hover:text-accent-400"
+        >
+          Designed &amp; developed by © 2026 Aniya Network Solutions Inc.
+        </a>
       </Container>
     </footer>
   );

@@ -67,14 +67,14 @@ export function Nav({ variant = "home" }: { variant?: Variant }) {
     >
       <Container className="flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <span className="flex items-center rounded-lg bg-white px-2.5 py-1.5 shadow-sm">
+          <span className="flex items-center rounded-lg bg-white px-2.5 py-1 shadow-sm">
             <Image
               src="/renoquotes-logo-full.png"
               alt="RenoQuotes"
               width={1017}
               height={612}
               priority
-              className="h-9 w-auto object-contain"
+              className="h-12 w-auto object-contain"
             />
           </span>
         </Link>
