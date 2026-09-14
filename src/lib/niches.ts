@@ -21,10 +21,10 @@ export const niches: Record<string, NicheContent> = {
   "bathroom-renovation": {
     slug: "bathroom-renovation",
     name: "Bathroom Renovation",
-    serviceArea: "Kitchener, Waterloo, Cambridge & Guelph",
+    serviceArea: "the US & Canada",
     headline: "Get Matched With a Verified Bathroom Renovation Pro",
     subheadline:
-      "Free quote, no obligation. Serving Kitchener–Waterloo, Cambridge and Guelph.",
+      "Free quote, no obligation. Serving homeowners across the US and Canada.",
     budgetOptions: [
       { value: "under-8k", label: "Under $8,000" },
       { value: "8k-15k", label: "$8,000 – $15,000" },
@@ -66,8 +66,7 @@ export const niches: Record<string, NicheContent> = {
       },
       {
         question: "What areas do you cover?",
-        answer:
-          "Right now: Kitchener, Waterloo, Cambridge, Guelph, Woodstock and the surrounding area.",
+        answer: "We match homeowners with vetted contractors across the United States and Canada.",
       },
       {
         question: "How fast will someone contact me?",

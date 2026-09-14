@@ -10,7 +10,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "RenoQuotes — Verified Renovation Leads",
   description:
-    "RenoQuotes connects homeowners with verified local renovation contractors in Kitchener-Waterloo, Cambridge and Guelph.",
+    "RenoQuotes connects homeowners with verified local renovation contractors across the United States and Canada.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

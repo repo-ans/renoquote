@@ -18,8 +18,8 @@ const stats: {
     rotate: "md:-rotate-3",
   },
   {
-    value: "4",
-    label: "Service areas: Kitchener, Waterloo, Cambridge, Guelph",
+    value: "2",
+    label: "Countries covered: the United States & Canada",
     position: "md:top-2 md:right-0",
     rotate: "md:rotate-2",
   },

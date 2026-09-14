@@ -79,10 +79,11 @@ export default function BathroomRenovationPage() {
                   📍
                 </p>
                 <h3 className="mt-2 text-2xl font-semibold text-navy-900 sm:text-[32px]">
-                  Local to {niche.serviceArea}
+                  Coverage across {niche.serviceArea}
                 </h3>
                 <p className="mt-1 text-base text-slate-500">
-                  No national call centers — just contractors near you.
+                  A vetted local contractor wherever you are — not a call
+                  center reading from a script.
                 </p>
               </StaggerItem>
               <StaggerItem className="text-center">

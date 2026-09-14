@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "./Container";
 
 const socials = [
@@ -28,8 +29,14 @@ export function Footer() {
       <Container className="py-14">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <span className="text-lg font-bold text-white">
-              Reno<span className="text-accent-400">Quotes</span>
+            <span className="inline-flex items-center rounded-lg bg-white px-2.5 py-1.5 shadow-sm">
+              <Image
+                src="/renoquotes-logo-full.png"
+                alt="RenoQuotes"
+                width={1017}
+                height={612}
+                className="h-9 w-auto object-contain"
+              />
             </span>
             <div className="mt-4 flex gap-3">
               {socials.map((s) => (
@@ -63,7 +70,7 @@ export function Footer() {
               href="/bathroom-renovation"
               className="text-slate-300 hover:text-accent-400"
             >
-              Get a Quote
+              For Homeowners
             </Link>
             <Link
               href="/contractors"
@@ -78,7 +85,7 @@ export function Footer() {
               Contact Information
             </span>
             <span className="text-slate-300">
-              Serving Kitchener, Waterloo, Cambridge, Guelph &amp; Woodstock
+              Serving homeowners and contractors across the US &amp; Canada
             </span>
             <a
               href="mailto:hello@renoquotes.cc"

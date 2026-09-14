@@ -16,7 +16,7 @@ export default function Home() {
         <Section className="pb-16 pt-16 sm:pt-24">
           <Container className="text-center">
             <div className="mb-5 flex flex-wrap justify-center gap-2">
-              <Badge>Kitchener–Waterloo · Cambridge · Guelph</Badge>
+              <Badge>Serving the US &amp; Canada</Badge>
               <Badge>Phone-Verified Leads Only</Badge>
             </div>
             <h1 className="mx-auto max-w-4xl text-5xl font-bold tracking-tight text-navy-900 sm:text-6xl md:text-7xl lg:text-8xl">

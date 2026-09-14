@@ -117,7 +117,7 @@ const faqs = [
   {
     question: "What areas and services do you cover?",
     answer:
-      "Right now: bathroom renovations across Kitchener, Waterloo, Cambridge, Guelph and Woodstock. We're expanding niche by niche as demand proves out.",
+      "Right now: bathroom renovations, available across the US and Canada. We're expanding niche by niche as demand proves out.",
   },
 ];
 
@@ -131,7 +131,7 @@ export default function ContractorsPage() {
             <div>
               <div className="mb-4 flex flex-wrap gap-2">
                 <span className="rounded-full bg-white/10 px-3.5 py-1.5 text-xs font-medium text-accent-400">
-                  Kitchener–Waterloo · Cambridge · Guelph
+                  Serving the US &amp; Canada
                 </span>
               </div>
               <h1 className="text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">

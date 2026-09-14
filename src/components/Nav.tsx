@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "./Button";
@@ -66,15 +67,15 @@ export function Nav({ variant = "home" }: { variant?: Variant }) {
     >
       <Container className="flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-navy-900 text-sm font-bold text-accent-400">
-            R
-          </span>
-          <span
-            className={`text-lg font-bold transition-colors duration-300 ${
-              dark ? "text-white" : "text-navy-900"
-            }`}
-          >
-            Reno<span className="text-accent-500">Quotes</span>
+          <span className="flex items-center rounded-lg bg-white px-2.5 py-1.5 shadow-sm">
+            <Image
+              src="/renoquotes-logo-full.png"
+              alt="RenoQuotes"
+              width={1017}
+              height={612}
+              priority
+              className="h-9 w-auto object-contain"
+            />
           </span>
         </Link>
 
