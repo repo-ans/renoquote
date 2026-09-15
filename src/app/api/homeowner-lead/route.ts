@@ -1,9 +1,5 @@
 import { NextResponse } from "next/server";
 
-// Stub: logs the submission only. Once a GHL "Inbound Webhook" workflow URL
-// (or API key + location id) is provided, forward `body` there via fetch()
-// instead of just logging — that's what actually gets the lead into GHL and
-// notifies the admin. See conversation notes for what's needed to wire this up.
 export async function POST(request: Request) {
   const body = await request.json();
 
@@ -22,6 +18,26 @@ export async function POST(request: Request) {
   }
 
   console.log("[homeowner-lead:new]", body);
+
+  const webhookUrl = process.env.GHL_HOMEOWNER_WEBHOOK_URL;
+  if (webhookUrl) {
+    try {
+      await fetch(webhookUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+    } catch (err) {
+      // Don't fail the homeowner's submission just because the CRM webhook
+      // hiccuped — they've already been told "thanks, we'll be in touch."
+      // Log it so the miss is visible without blocking the user.
+      console.error("[homeowner-lead:ghl-forward-failed]", err);
+    }
+  } else {
+    console.warn(
+      "[homeowner-lead] GHL_HOMEOWNER_WEBHOOK_URL is not set — lead was only logged, not forwarded to GHL."
+    );
+  }
 
   return NextResponse.json({ ok: true });
 }

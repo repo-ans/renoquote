@@ -65,7 +65,7 @@ export function Nav({ variant = "home" }: { variant?: Variant }) {
     <header
       className={`sticky top-0 z-50 border-b transition-colors duration-300 ${headerBg}`}
     >
-      <Container className="flex h-16 items-center justify-between">
+      <Container className="flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
           <span className="flex items-center rounded-lg bg-white px-2.5 py-1 shadow-sm">
             <Image
@@ -74,7 +74,7 @@ export function Nav({ variant = "home" }: { variant?: Variant }) {
               width={1017}
               height={612}
               priority
-              className="h-12 w-auto object-contain"
+              className="h-14 w-auto object-contain"
             />
           </span>
         </Link>
@@ -133,7 +133,7 @@ export function Nav({ variant = "home" }: { variant?: Variant }) {
             animate={{ clipPath: "circle(150% at calc(100% - 2.25rem) 2rem)" }}
             exit={{ clipPath: "circle(0% at calc(100% - 2.25rem) 2rem)" }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="fixed inset-x-0 top-16 bottom-0 z-40 flex flex-col justify-center bg-navy-950 md:hidden"
+            className="fixed inset-x-0 top-20 bottom-0 z-40 flex flex-col justify-center bg-navy-950 md:hidden"
           >
             <motion.div
               variants={menuContainer}
