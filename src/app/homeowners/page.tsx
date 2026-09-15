@@ -8,11 +8,66 @@ import { FAQAccordion } from "@/components/FAQAccordion";
 import { LeadForm } from "@/components/LeadForm";
 import { AnimatedText } from "@/components/AnimatedText";
 import { StaggerGrid, StaggerItem } from "@/components/Stagger";
-import { getNiche } from "@/lib/niches";
 
-const niche = getNiche("bathroom-renovation")!;
+const budgetOptions = [
+  { value: "under-8k", label: "Under $8,000" },
+  { value: "8k-15k", label: "$8,000 – $15,000" },
+  { value: "15k-30k", label: "$15,000 – $30,000" },
+  { value: "30k-plus", label: "$30,000+" },
+];
 
-export default function BathroomRenovationPage() {
+const timelineOptions = [
+  { value: "asap", label: "ASAP" },
+  { value: "1-3-months", label: "1–3 months" },
+  { value: "exploring", label: "Just exploring" },
+];
+
+const steps = [
+  {
+    title: "Tell us about your project",
+    description:
+      "A quick 30-second form — what you need, your budget range and timeline.",
+  },
+  {
+    title: "We confirm the details",
+    description:
+      "A short call to verify it's really you and confirm your project — no spam, no robocalls.",
+  },
+  {
+    title: "Get matched with a local pro",
+    description:
+      "A vetted contractor in your area reaches out, usually within the hour.",
+  },
+];
+
+const faqs = [
+  {
+    question: "Is this actually free?",
+    answer:
+      "Yes. There's no cost and no obligation to get a quote. You only move forward if you like what the contractor offers.",
+  },
+  {
+    question: "Will I get calls from a bunch of different contractors?",
+    answer:
+      "No. We match you with one vetted local contractor for your project, not a list of five companies competing for your attention.",
+  },
+  {
+    question: "What kinds of projects do you cover?",
+    answer:
+      "Bathrooms, kitchens, basements, decks, fencing, concrete and larger renovations. Pick the closest match on the form — we'll confirm the details on the call.",
+  },
+  {
+    question: "What areas do you cover?",
+    answer: "We match homeowners with vetted contractors across the United States and Canada.",
+  },
+  {
+    question: "How fast will someone contact me?",
+    answer:
+      "After we confirm your details, the contractor typically calls within the hour during business hours.",
+  },
+];
+
+export default function HomeownersPage() {
   return (
     <>
       <Nav variant="homeowner" />
@@ -22,21 +77,24 @@ export default function BathroomRenovationPage() {
             <div>
               <div className="mb-4 flex flex-wrap gap-2">
                 <Badge>Licensed &amp; Vetted</Badge>
-                <Badge>Local to Your Area</Badge>
+                <Badge>Serving the US &amp; Canada</Badge>
                 <Badge>Fast, Free Quotes</Badge>
               </div>
               <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-navy-900 sm:text-5xl lg:text-6xl">
-                <AnimatedText text={niche.headline} highlightFrom={5} />
+                <AnimatedText
+                  text="Get Matched With a Verified Renovation Pro"
+                  highlightFrom={4}
+                />
               </h1>
               <p className="mt-4 max-w-lg text-base text-slate-500 sm:text-lg">
-                {niche.subheadline}
+                Free quote, no obligation. Serving homeowners across the US
+                and Canada.
               </p>
             </div>
 
             <LeadForm
-              nicheSlug={niche.slug}
-              budgetOptions={niche.budgetOptions}
-              timelineOptions={niche.timelineOptions}
+              budgetOptions={budgetOptions}
+              timelineOptions={timelineOptions}
             />
           </Container>
         </Section>
@@ -47,7 +105,7 @@ export default function BathroomRenovationPage() {
               How it works
             </h2>
             <StaggerGrid className="mt-14 grid gap-5 sm:grid-cols-3">
-              {niche.steps.map((step, i) => (
+              {steps.map((step, i) => (
                 <StaggerItem key={step.title}>
                   <StepCard
                     index={i + 1}
@@ -79,7 +137,7 @@ export default function BathroomRenovationPage() {
                   📍
                 </p>
                 <h3 className="mt-2 text-2xl font-semibold text-navy-900 sm:text-[32px]">
-                  Coverage across {niche.serviceArea}
+                  Coverage across the US &amp; Canada
                 </h3>
                 <p className="mt-1 text-base text-slate-500">
                   A vetted local contractor wherever you are — not a call
@@ -107,7 +165,7 @@ export default function BathroomRenovationPage() {
               Common questions
             </h2>
             <div className="mt-8">
-              <FAQAccordion items={niche.faqs} />
+              <FAQAccordion items={faqs} />
             </div>
           </Container>
         </Section>

@@ -67,7 +67,7 @@ export function Footer() {
           <div className="flex flex-col gap-3 text-sm">
             <span className="font-semibold text-white">Navigation</span>
             <Link
-              href="/bathroom-renovation"
+              href="/homeowners"
               className="text-slate-300 hover:text-accent-400"
             >
               For Homeowners

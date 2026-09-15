@@ -28,8 +28,8 @@ export function FAQAccordion({
               <motion.span
                 initial={false}
                 animate={{
-                  backgroundColor: isOpen ? "#d6294f" : "#f3efe8",
-                  color: isOpen ? "#ffffff" : "#a11743",
+                  backgroundColor: isOpen ? "#f2762e" : "#f3efe8",
+                  color: isOpen ? "#ffffff" : "#d9541c",
                 }}
                 transition={{ duration: 0.2 }}
                 className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-2xl"

@@ -6,7 +6,13 @@ import { NextResponse } from "next/server";
 export async function POST(request: Request) {
   const body = await request.json();
 
-  if (!body.name || !body.phone || !body.budget || !body.timeline) {
+  if (
+    !body.name ||
+    !body.phone ||
+    !body.projectType ||
+    !body.budget ||
+    !body.timeline
+  ) {
     return NextResponse.json({ error: "Missing fields" }, { status: 400 });
   }
 

@@ -117,7 +117,7 @@ const faqs = [
   {
     question: "What areas and services do you cover?",
     answer:
-      "Right now: bathroom renovations, available across the US and Canada. We're expanding niche by niche as demand proves out.",
+      "Bathrooms, kitchens, basements, decks, fencing, concrete and larger renovations, available across the US and Canada.",
   },
 ];
 

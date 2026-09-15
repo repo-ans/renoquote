@@ -2,17 +2,25 @@
 
 import { motion } from "framer-motion";
 import { FormEvent, useState } from "react";
-import { BudgetOption } from "@/lib/niches";
 import { Button } from "./Button";
 
+export type SelectOption = { value: string; label: string };
+
+const projectTypeOptions: SelectOption[] = [
+  { value: "bathroom", label: "Bathroom" },
+  { value: "kitchen", label: "Kitchen" },
+  { value: "basement", label: "Basement" },
+  { value: "deck-fencing", label: "Deck / Fencing" },
+  { value: "concrete", label: "Concrete" },
+  { value: "other", label: "Other" },
+];
+
 export function LeadForm({
-  nicheSlug,
   budgetOptions,
   timelineOptions,
 }: {
-  nicheSlug: string;
-  budgetOptions: BudgetOption[];
-  timelineOptions: BudgetOption[];
+  budgetOptions: SelectOption[];
+  timelineOptions: SelectOption[];
 }) {
   const [status, setStatus] = useState<"idle" | "submitting" | "done" | "error">(
     "idle"
@@ -24,9 +32,11 @@ export function LeadForm({
 
     const form = event.currentTarget;
     const data = {
-      niche: nicheSlug,
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
       phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      projectType: (
+        form.elements.namedItem("projectType") as HTMLSelectElement
+      ).value,
       budget: (form.elements.namedItem("budget") as HTMLSelectElement).value,
       timeline: (form.elements.namedItem("timeline") as HTMLSelectElement)
         .value,
@@ -94,6 +104,26 @@ export function LeadForm({
           placeholder="(519) 555-0123"
           className="w-full rounded-lg border border-navy-900/10 px-3.5 py-2.5 text-sm text-navy-900 outline-none transition-colors focus:border-accent-500"
         />
+      </div>
+      <div>
+        <label className="mb-1 block text-xs font-medium text-slate-500">
+          What do you need help with?
+        </label>
+        <select
+          name="projectType"
+          required
+          defaultValue=""
+          className="w-full rounded-lg border border-navy-900/10 bg-white px-3 py-2.5 text-sm text-navy-900 outline-none transition-colors focus:border-accent-500"
+        >
+          <option value="" disabled>
+            Select
+          </option>
+          {projectTypeOptions.map((opt) => (
+            <option key={opt.value} value={opt.value}>
+              {opt.label}
+            </option>
+          ))}
+        </select>
       </div>
       <div className="grid grid-cols-2 gap-3">
         <div>

@@ -10,7 +10,7 @@ import { Container } from "./Container";
 type Variant = "home" | "homeowner" | "contractor";
 
 const ctaByVariant: Record<Variant, { label: string; href: string }> = {
-  home: { label: "Get a Free Quote", href: "/bathroom-renovation" },
+  home: { label: "Get a Free Quote", href: "/homeowners" },
   homeowner: { label: "Get a Free Quote", href: "#quote-form" },
   contractor: { label: "Get Your First Lead", href: "#get-started" },
 };
@@ -81,7 +81,7 @@ export function Nav({ variant = "home" }: { variant?: Variant }) {
 
         <nav className="hidden items-center gap-8 md:flex">
           <Link
-            href="/bathroom-renovation"
+            href="/homeowners"
             className={`relative text-sm font-medium transition-colors after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-accent-500 after:transition-all after:duration-300 hover:after:w-full ${
               dark
                 ? "text-white/90 hover:text-accent-400"
@@ -143,7 +143,7 @@ export function Nav({ variant = "home" }: { variant?: Variant }) {
             >
               <motion.div variants={menuItem}>
                 <Link
-                  href="/bathroom-renovation"
+                  href="/homeowners"
                   className="block py-3 text-4xl font-bold text-white"
                   onClick={() => setOpen(false)}
                 >

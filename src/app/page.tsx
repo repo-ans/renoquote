@@ -7,6 +7,7 @@ import { Badge } from "@/components/Badge";
 import { AnimatedText } from "@/components/AnimatedText";
 import { StaggerGrid, StaggerItem } from "@/components/Stagger";
 import { ImpactStats } from "@/components/ImpactStats";
+import { LottieIcon } from "@/components/LottieIcon";
 
 export default function Home() {
   return (
@@ -38,9 +39,12 @@ export default function Home() {
             <StaggerGrid className="grid gap-5 pb-20 sm:grid-cols-2">
               <StaggerItem hover={false}>
                 <Link
-                  href="/bathroom-renovation"
-                  className="group block rounded-2xl bg-white p-7 shadow-sm ring-1 ring-navy-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-accent-500/40"
+                  href="/homeowners"
+                  className="group block h-full rounded-2xl bg-white p-7 shadow-sm ring-1 ring-navy-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-accent-500/40"
                 >
+                  <div className="flex h-56 items-center justify-center">
+                    <LottieIcon src="/Home.lottie" className="h-56 w-56" />
+                  </div>
                   <span className="text-xs font-semibold uppercase tracking-wide text-accent-600">
                     Homeowners
                   </span>
@@ -60,8 +64,14 @@ export default function Home() {
               <StaggerItem hover={false}>
                 <Link
                   href="/contractors"
-                  className="group block rounded-2xl bg-navy-900 p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-2 hover:ring-accent-500/40"
+                  className="group block h-full rounded-2xl bg-navy-900 p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-2 hover:ring-accent-500/40"
                 >
+                  <div className="flex h-56 items-center justify-center">
+                    <LottieIcon
+                      src="/Electrician.lottie"
+                      className="h-36 w-36"
+                    />
+                  </div>
                   <span className="text-xs font-semibold uppercase tracking-wide text-accent-400">
                     Contractors
                   </span>
@@ -81,11 +91,11 @@ export default function Home() {
           </Container>
         </Section>
 
-        <Section className="bg-white py-24 sm:py-32">
+        {/* <Section className="bg-white py-24 sm:py-32">
           <Container>
             <ImpactStats />
           </Container>
-        </Section>
+        </Section> */}
       </main>
       <Footer />
     </>
