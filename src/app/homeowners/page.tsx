@@ -2,25 +2,11 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Container } from "@/components/Container";
 import { Section } from "@/components/Section";
-import { Badge } from "@/components/Badge";
 import { StepCard } from "@/components/StepCard";
 import { FAQAccordion } from "@/components/FAQAccordion";
-import { LeadForm } from "@/components/LeadForm";
-import { AnimatedText } from "@/components/AnimatedText";
+import { HomeownerHero } from "@/components/HomeownerHero";
+import { LottieIcon } from "@/components/LottieIcon";
 import { StaggerGrid, StaggerItem } from "@/components/Stagger";
-
-const budgetOptions = [
-  { value: "under-8k", label: "Under $8,000" },
-  { value: "8k-15k", label: "$8,000 – $15,000" },
-  { value: "15k-30k", label: "$15,000 – $30,000" },
-  { value: "30k-plus", label: "$30,000+" },
-];
-
-const timelineOptions = [
-  { value: "asap", label: "ASAP" },
-  { value: "1-3-months", label: "1–3 months" },
-  { value: "exploring", label: "Just exploring" },
-];
 
 const steps = [
   {
@@ -75,26 +61,11 @@ export default function HomeownersPage() {
         <Section className="pb-16 pt-14 sm:pt-20">
           <Container className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
-              <div className="mb-4 flex flex-wrap gap-2">
-                <Badge>Licensed &amp; Vetted</Badge>
-                <Badge>Serving the US &amp; Canada</Badge>
-                <Badge>Fast, Free Quotes</Badge>
-              </div>
-              <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-navy-900 sm:text-5xl lg:text-6xl">
-                <AnimatedText
-                  text="Get Matched With a Verified Renovation Pro"
-                  highlightFrom={4}
-                />
-              </h1>
-              <p className="mt-4 max-w-lg text-base text-slate-500 sm:text-lg">
-                Free quote, no obligation. Serving homeowners across the US
-                and Canada.
-              </p>
+              <HomeownerHero />
             </div>
-
-            <LeadForm
-              budgetOptions={budgetOptions}
-              timelineOptions={timelineOptions}
+            <LottieIcon
+              src="/Home.lottie"
+              className="mx-auto h-64 w-64 sm:h-96 sm:w-96"
             />
           </Container>
         </Section>

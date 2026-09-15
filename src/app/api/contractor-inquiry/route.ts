@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 
 // Stub: logs the submission only. Wire to a real notification channel before
-// launch — see src/app/api/lead/route.ts for the same gap on the homeowner side.
+// launch — see src/app/api/homeowner-lead/route.ts for the same gap on the
+// homeowner side.
 export async function POST(request: Request) {
   const body = await request.json();
 

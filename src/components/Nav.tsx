@@ -107,7 +107,7 @@ export function Nav({ variant = "home" }: { variant?: Variant }) {
 
         <button
           type="button"
-          className={`relative z-50 flex h-9 w-9 items-center justify-center rounded-md transition-colors md:hidden ${
+          className={`relative z-50 flex h-9 w-9 cursor-pointer items-center justify-center rounded-md transition-colors md:hidden ${
             dark ? "text-white" : "text-navy-900"
           }`}
           onClick={() => setOpen((v) => !v)}

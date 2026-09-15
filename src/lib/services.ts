@@ -1,0 +1,16 @@
+export const services: string[] = [
+  "Bathroom Renovation",
+  "Kitchen Renovation",
+  "Basement Renovation",
+  "HVAC",
+  "Plumbing",
+  "Electrical",
+  "Roofing",
+  "Painting",
+  "Flooring",
+  "Deck & Fencing",
+  "Concrete",
+  "General Contractor",
+  "Landscaping",
+  "Windows & Doors",
+];

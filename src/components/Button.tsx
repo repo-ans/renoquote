@@ -16,7 +16,7 @@ const variantClasses: Record<Variant, string> = {
 };
 
 const baseClasses =
-  "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 sm:text-base";
+  "inline-flex cursor-pointer items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 sm:text-base";
 
 export function Button({
   children,
@@ -25,6 +25,7 @@ export function Button({
   onClick,
   type = "button",
   className = "",
+  disabled = false,
 }: {
   children: ReactNode;
   href?: string;
@@ -32,8 +33,11 @@ export function Button({
   onClick?: () => void;
   type?: "button" | "submit";
   className?: string;
+  disabled?: boolean;
 }) {
-  const classes = `${baseClasses} ${variantClasses[variant]} ${className}`;
+  const classes = `${baseClasses} ${variantClasses[variant]} ${
+    disabled ? "cursor-not-allowed opacity-50" : ""
+  } ${className}`;
 
   if (href) {
     return (
@@ -51,10 +55,11 @@ export function Button({
 
   return (
     <motion.button
-      whileHover={{ scale: 1.03 }}
-      whileTap={{ scale: 0.97 }}
+      whileHover={disabled ? undefined : { scale: 1.03 }}
+      whileTap={disabled ? undefined : { scale: 0.97 }}
       type={type}
       onClick={onClick}
+      disabled={disabled}
       className={classes}
     >
       {children}
